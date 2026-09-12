@@ -1,17 +1,21 @@
-# 🛜nrfBlueNullifier
-A tool which jam classic bluetooth signals using 1 nrf24L01+PA/LNA module at VSPI.
+# 🛜 nrfBlueNullifier
 
-# 📦Requirements
-- NodeMCU ESP-32S 38-Pins
-- One nrf24L01 Module OR nrf24L01+PA/LNA Module
-- `7` Female to Female Jumper Wires
+Herramienta que interfiere señales de Bluetooth Clásico usando 1 módulo nrf24L01+PA/LNA conectado por VSPI.
 
-# 🗒️Note
-- nrf24L01 and nrf24L01+PA/LNA modules have same pinout.
+# 📦 Requisitos
 
-# 🔌Pinout Table
+- NodeMCU ESP-32S de 38 pines
+- Un módulo nrf24L01 O módulo nrf24L01+PA/LNA
+- `7` cables jumper hembra a hembra
+
+# 🗒️ Nota
+
+- Los módulos nrf24L01 y nrf24L01+PA/LNA tienen el mismo pinout.
+
+# 🔌 Tabla de pines
+
 | NODEMCU ESP-32S | nrf24l01 |
-|-----------------|----------|
+| --------------- | -------- |
 | 3.3V            | VCC      |
 | GND             | GND      |
 | GPIO22          | CE       |
@@ -20,83 +24,94 @@ A tool which jam classic bluetooth signals using 1 nrf24L01+PA/LNA module at VSP
 | GPIO23          | MOSI     |
 | GPIO19          | MISO     |
 
-# 🖼️Images
+# 🖼️ Imágenes
+
 ![NodeMCU ESP-32S](https://github.com/user-attachments/assets/b790a39f-dae6-4087-a740-148f6b272aa4)
 ![nrf24L01](https://github.com/user-attachments/assets/706db436-8ce3-431d-8b0e-51e8936e28ff)
 
-# ⚙️Setup
-1. Download Arduino IDE from [here](https://www.arduino.cc/en/software) according to your Operating System.
-2. Install it.
-3. Go to `File` → `Preferences` → `Additional Boards Manager URLs`.
-4. Paste the following link :
+# ⚙️ Configuración
+
+1. Descargá el Arduino IDE desde [aquí](https://www.arduino.cc/en/software) según tu sistema operativo.
+2. Instalalo.
+3. Andá a `File` → `Preferences` → `Additional Boards Manager URLs`.
+4. Pegá el siguiente enlace:
+
    ```
    https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
    ```
-5. Click on `OK`.
-6. Go to `Tools` → `Board` → `Board Manager`.
-7. Wait for sometimes and search `esp32` by `Espressif Systems`.
-8. Simply install it.
-9. Wait for sometime and after that it is installed.
-10. Go to `Sketch` → `Include Library` → `Manage Libraries`.
-11. Wait for sometimes and search `rf24` by `TMRh20, Avamander`.
-12. Simply install it.
-13. Wait for sometime and after that it is installed.
-14. Restart the Arduino IDE by closing and open again.
-15. Done!
 
-# 🔧Install
-1. Download or Clone the Repository.
-2. Open the folder and just double click on `nrfBlueNullifier.ino` file.
-3. It opens in Arduino IDE.
-4. Compile the code.
-5. Select the correct board from the `Tools` → `Board` → `ESP32 Arduino`.
-   - It is generally `NodeMCU-32S`.
-6. Select the correct port number of that board.
-7. Upload the code.
-8. When show `Connecting.....` press and hold `BOOT` button.
-9. When show `Writing at ` then release the `BOOT` button.
-10. Done!
-   - The script starts running automatically.
+5. Hacé clic en `OK`.
+6. Andá a `Tools` → `Board` → `Board Manager`.
+7. Esperá unos momentos y buscá `esp32` de `Espressif Systems`.
+8. Instalalo.
+9. Esperá unos momentos hasta que quede instalado.
+10. Andá a `Sketch` → `Include Library` → `Manage Libraries`.
+11. Esperá unos momentos y buscá `rf24` de `TMRh20, Avamander`.
+12. Instalala.
+13. Esperá unos momentos hasta que quede instalada.
+14. Reiniciá el Arduino IDE cerrándolo y volviéndolo a abrir.
+15. ¡Listo!
 
-# 🔧Install using ESP Web Flasher
-1. Open Adafruit ESP Web Flasher from [here](https://adafruit.github.io/Adafruit_WebSerial_ESPTool/).
-2. Set the Baud Rate to `115200 Baud`.
-3. Connect `ESP32` with a USB cable and then to the PC/Laptop.
-4. Press and hold the `BOOT` button.
-5. Click on `Connect` button.
-6. Select your Device COM Port in the Pop-Up Window.
-7. Release the `BOOT` button.
-   - When connected successfully, then it show this <img width="386" height="217" alt="Adafruit ESP Web Flasher" src="https://github.com/user-attachments/assets/47b8888e-25d2-4a29-ab6d-25055cf3a033" />
-8. Click on `Erase` button.
-   - Wait for sometimes to successfully erased.
-9. Download `3` files from this directory.
-    - The files are :
+# 🔧 Instalación
+
+1. Descargá o cloná el repositorio.
+2. Abrí la carpeta y hacé doble clic en el archivo `nrfBlueNullifier.ino`.
+3. Se abre en el Arduino IDE.
+4. Compilá el código.
+5. Seleccioná la placa correcta en `Tools` → `Board` → `ESP32 Arduino`.
+   - Generalmente es `NodeMCU-32S`.
+6. Seleccioná el número de puerto correcto de esa placa.
+7. Subí el código.
+8. Cuando aparezca `Connecting.....`, mantené presionado el botón `BOOT`.
+9. Cuando aparezca `Writing at`, soltá el botón `BOOT`.
+10. ¡Listo!
+    - El script empieza a ejecutarse automáticamente.
+
+# 🔧 Instalación con ESP Web Flasher
+
+1. Abrí el Adafruit ESP Web Flasher desde [aquí](https://adafruit.github.io/Adafruit_WebSerial_ESPTool/).
+2. Configurá el Baud Rate en `115200 Baud`.
+3. Conectá el `ESP32` con un cable USB y este a la PC.
+4. Mantené presionado el botón `BOOT`.
+5. Hacé clic en el botón `Connect`.
+6. Seleccioná el puerto COM de tu dispositivo en la ventana emergente.
+7. Soltá el botón `BOOT`.
+   - Si la conexión es exitosa, se muestra esto <img width="386" height="217" alt="Adafruit ESP Web Flasher" src="https://github.com/user-attachments/assets/47b8888e-25d2-4a29-ab6d-25055cf3a033" />
+8. Hacé clic en el botón `Erase`.
+   - Esperá unos momentos hasta que se borre correctamente.
+9. Descargá los `3` archivos de este directorio.
+    - Los archivos son:
       1. `nrfBlueNullifier-VSPI-nrf24L01-bootloader.bin`
       2. `nrfBlueNullifier-VSPI-nrf24L01-partitions.bin`
       3. `nrfBlueNullifier-VSPI-nrf24L01.bin`
-10. Select `nrfBlueNullifier-VSPI-nrf24L01-bootloader.bin` file with offset `0x1000`.
-11. Select `nrfBlueNullifier-VSPI-nrf24L01-partitions.bin` file with offset `0x8000`.
-12. Select `nrfBlueNullifier-VSPI-nrf24L01.bin` file with offset `0x10000`.
-13. Click on `Program` button.
-    - Wait for sometimes to successfully programmed.
-14. Press and release the `BOOT` button.
-15. Unplug and plug the `ESP32` on the PC/Laptop.
-16. Done! `nrfBlueNullifier-VSPI-nrf24L01` is ready.
+10. Seleccioná el archivo `nrfBlueNullifier-VSPI-nrf24L01-bootloader.bin` con el offset `0x1000`.
+11. Seleccioná el archivo `nrfBlueNullifier-VSPI-nrf24L01-partitions.bin` con el offset `0x8000`.
+12. Seleccioná el archivo `nrfBlueNullifier-VSPI-nrf24L01.bin` con el offset `0x10000`.
+13. Hacé clic en el botón `Program`.
+    - Esperá unos momentos hasta que se grabe correctamente.
+14. Presioná y soltá el botón `BOOT`.
+15. Desconectá y volvé a conectar el `ESP32` a la PC.
+16. ¡Listo! `nrfBlueNullifier-VSPI-nrf24L01` está listo.
 
-# 🤔What happened after script is running?
-- It breaks the sound.
-- It blocks the sound even the device playing the music.
-- Sometimes it disconnects the bluetoth from the device.
+# 🤔 ¿Qué ocurre cuando el script se ejecuta?
 
-# 🛠️Modification In Code
-- The code effects on classic bluetooth and wifi.
-- If want to put most of the effect on classic bluetooth only, modify the code by replacing the code in line 14 by following :
+- Corta el sonido.
+- Bloquea el sonido incluso cuando el dispositivo está reproduciendo música.
+- A veces desconecta el Bluetooth del dispositivo.
+
+# 🛠️ Modificación en el código
+
+- El código afecta al Bluetooth Clásico y al WiFi.
+- Si querés concentrar el efecto en el Bluetooth Clásico, modificá el código reemplazando la línea 14 por lo siguiente:
+
 ```
 byte hopping_channel[] = {32, 34, 46, 48, 50, 52, 26, 28, 30, 74, 76, 78};
 ```
-- Save the code.
-- Compile the code and then upload it.
 
-# 🤔What happened after modified script is running?
-- It blocks the sound even the device playing the music.
-- It slow down the speed of the wifi.
+- Guardá el código.
+- Compilá el código y subilo.
+
+# 🤔 ¿Qué ocurre cuando el script modificado se ejecuta?
+
+- Bloquea el sonido incluso cuando el dispositivo está reproduciendo música.
+- Reduce la velocidad del WiFi.
